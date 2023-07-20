@@ -69,13 +69,13 @@ export const ContactForm = () => {
                 type="text"
                 id="number"
                 autoComplete="off"
-                placeholder="+38-099-123-45-67"
+                placeholder="+380991234567"
                 data-error={errors.number && touched.number ? true : false}
               />
               <ErrorMsg name="number" component="span" />
             </InputWrapper>
 
-            <Btn type="submit">Done</Btn>
+            <Btn type="submit">Add</Btn>
           </FormContainer>
         )}
       </Formik>
