@@ -19,8 +19,8 @@ import {
 } from './LoginForm.styled';
 
 const initialValues = {
-  email: 'test-user-33@gmail.com',
-  password: 'Test-user-33',
+  email: 'test-user-11@gmail.com',
+  password: 'Test-user-11',
 };
 
 export const LoginForm = () => {
