@@ -1,6 +1,7 @@
 import { RegisterPage } from 'pages/Register';
 import { LoginPage } from 'pages/Login';
 import { Route, Routes } from 'react-router-dom';
+import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { HomePage } from 'pages/Home';
@@ -12,12 +13,15 @@ import { PrivateRoute } from './PrivateRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
